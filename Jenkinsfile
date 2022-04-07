@@ -9,6 +9,5 @@ pipeline {
         sh ''
       }
     }
-
   } // End of Stages
 }
