@@ -1,0 +1,79 @@
+pipeline {
+  agent any
+  options{
+    ansiColor('xterm')
+  }
+//   triggers {
+//     pollSCM('*/2 * * * *')
+//   }
+   tools {
+     maven 'maven'
+   }
+  environment {
+        ENV_URL = "pipeline.google.com"
+        SSH_CRED = credentials('SSH')
+  }
+  parameters {
+          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+          text(name: 'BIOGRAPHY', defaultValue: 'My', description: 'Enter some information about the person')
+
+          booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+          choice(name: 'CHOICE', choices: ['One', 'Two', 'Three','Four'], description: 'Pick something')
+
+          password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+      }
+  stages {
+    stage('One') {
+      when {
+        environment name: 'CHOICE' , value: 'One'
+      }
+      steps {
+                 echo "Hello ${params.PERSON}"
+                 echo "Biography: ${params.BIOGRAPHY}"
+                 echo "Toggle: ${params.TOGGLE}"
+                 echo "Choice: ${params.CHOICE}"
+                 echo "Password: ${params.PASSWORD}"
+                 sh 'mvn --version'
+                      // some block
+       sh '''
+         echo "\u001B[34mHello World in Green\u001B[0m"
+         echo hello Akram
+         echo hello saira
+         echo ENV_URL: ${ENV_URL}
+         '''
+      }
+    }
+
+
+   stage('Two') {
+     environment {
+       ENV_URL = "stage.google.com"
+     }
+     when {
+             environment name: 'CHOICE' , value: 'Two'
+           }
+     steps {
+       sh '''
+          echo "stage Two"
+          echo ENV_URL: ${ENV_URL}
+          env
+          '''
+     }
+   }
+//    stage('Three') {
+//       input {
+//         message "Should we continue?"
+//         ok "Yes, we should."
+//         submitter "alice,bob"
+//         parameters {
+//          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+//          }
+//       }
+//       steps {
+//         echo "Hello, ${PERSON}, nice to meet you."
+//       }
+//     }
+  }
+}
