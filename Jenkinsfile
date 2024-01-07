@@ -1,11 +1,13 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('Lint Check') {
             steps {
-                echo 'Hello, Jenkins!'
+                // Add your steps here
+                sh ''
             }
         }
     }
 }
+
+
