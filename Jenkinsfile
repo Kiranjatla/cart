@@ -1,11 +1,14 @@
 pipeline {
     agent any
-
     stages {
-        stage('Lint Check')
+        stage('Lint Check') {
             steps {
-                sh ''
+                // Add your steps here
+                sh 'echo "Running lint checks"'
+                sh 'lint-command-here'
             }
         }
     }
+}
+
 
