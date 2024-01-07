@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Lint Check') {
             steps {
-                // Add your steps here
+                // Add your steps heres
                 sh ''
             }
         }
