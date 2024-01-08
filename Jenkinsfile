@@ -1,13 +1,5 @@
-pipeline {
-    agent any
-    stages {
-        stage('Lint Check') {
-            steps {
-                // Add your steps here
-                sh ''
-            }
-        }
-    }
-}
+@Library('roboshop-shared-library@main') _
+
+env.COMPONENT="cart"
 
 
