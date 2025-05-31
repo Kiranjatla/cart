@@ -12,7 +12,10 @@ pipeline{
 
         stage('Style Checks'){
            when{
+           anyOf{
            branch 'main'
+           tag "*"
+           }
            }
           steps{
               echo 'Style Checks'
@@ -20,8 +23,11 @@ pipeline{
                 }
         stage('Unit Tests'){
         when{
-                   branch 'main'
-                   }
+          anyOf{
+             branch 'main'
+              tag "*"
+             }
+               }
           steps{
               echo 'Unit Tests'
                     }
