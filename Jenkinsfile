@@ -12,7 +12,7 @@ pipeline{
 
         stage('Style Checks'){
            when{
-           branch 'master'
+           branch 'main'
            }
           steps{
               echo 'Style Checks'
@@ -20,7 +20,7 @@ pipeline{
                 }
         stage('Unit Tests'){
         when{
-                   branch 'master'
+                   branch 'main'
                    }
           steps{
               echo 'Unit Tests'
