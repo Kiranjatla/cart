@@ -6,15 +6,22 @@ pipeline{
         stage('Code Quality'){
           steps{
               echo 'code qaulity'
+              sh 'env'
               }
           }
 
         stage('Style Checks'){
+           when{
+           branch 'master'
+           }
           steps{
               echo 'Style Checks'
                     }
                 }
         stage('Unit Tests'){
+        when{
+                   branch 'master'
+                   }
           steps{
               echo 'Unit Tests'
                     }
