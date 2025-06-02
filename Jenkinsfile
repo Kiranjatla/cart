@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage('Code Quality'){
           steps{
-              echo 'code qaulity'
+              echo 'code quality'
               sh 'env'
               }
           }
@@ -20,7 +20,7 @@ pipeline{
           steps{
               echo 'Style Checks'
                     }
-                }
+                    }
         stage('Unit Tests'){
         when{
           anyOf{
