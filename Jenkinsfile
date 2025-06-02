@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pipeline{
 
     agent any
@@ -37,3 +38,8 @@ pipeline{
        }
 
      }
+=======
+@Library('roboshop') _
+
+nodejs()
+>>>>>>> main
