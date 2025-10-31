@@ -9,5 +9,5 @@ resources:
   requests:
     cpu: 800m
     memory: 800Mi
-  java:
+java:
     maxRamPercentage: 70.0
