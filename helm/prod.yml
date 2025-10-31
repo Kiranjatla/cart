@@ -2,10 +2,10 @@ appPort: 8080
 appName: cart
 externalSecrets:
   enabled: false
-resources:
-  limits:
-    cpu: 1000m
-    memory: 512Mi
-  requests:
-    cpu: 150m
-    memory: 256Mi
+#resources:
+#  limits:
+#    cpu: 1000m
+#    memory: 512Mi
+#  requests:
+#    cpu: 150m
+#    memory: 256Mi
