@@ -4,10 +4,10 @@ externalSecrets:
   enabled: false
 resources:
   limits:
-    cpu: 1000m
-    memory: 1024Mi
+    cpu: 500m
+    memory: 512Mi
   requests:
-    cpu: 800m
-    memory: 800Mi
+    cpu: 200m
+    memory: 256Mi
 java:
     maxRamPercentage: 70.0
