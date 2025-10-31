@@ -10,4 +10,4 @@ resources:
     cpu: 200m
     memory: 256Mi
 java:
-    maxRamPercentage: 70.0
+    xmx: "350m"
