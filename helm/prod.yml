@@ -1,7 +1,7 @@
 appPort: 8080
-#appName: cart
-#externalSecrets:
-#  enabled: false
+appName: cart
+externalSecrets:
+  enabled: false
 #resources:
 #  limits:
 #    cpu: 500m
