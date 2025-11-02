@@ -9,5 +9,5 @@
 #  requests:
 #    cpu: 200m
 #    memory: 256Mi
-#java:
-#    xmx: "350m"
+java:
+    xmx: "350m"
