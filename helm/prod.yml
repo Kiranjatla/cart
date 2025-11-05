@@ -2,12 +2,12 @@ appPort: 8080
 appName: cart
 externalSecrets:
   enabled: true
-#resources:
-#  limits:
-#    cpu: 500m
-#    memory: 512Mi
-#  requests:
-#    cpu: 200m
-#    memory: 256Mi
-java:
-    xmx: "350m"
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+#java:
+#    xmx: "350m"
